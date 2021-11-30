@@ -1,0 +1,41 @@
+Microsoft Windows [Version 10.0.19042.1348]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\64352>docker container run -d nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+eff15d958d66: Pull complete
+1e5351450a59: Pull complete
+2df63e6ce2be: Pull complete
+9171c7ae368c: Pull complete
+020f975acd28: Pull complete
+266f639b35ad: Pull complete
+Digest: sha256:097c3a0913d7e3a5b01b6c685a60c03632fc7a2b50bc8e35bcaa3691d788226e
+Status: Downloaded newer image for nginx:latest
+4104718271c16b12d8975a227a62ec1fb743f8f123e2f1f76861c92f738de5cd
+
+C:\Users\64352>docker container run -d nginx
+c72d1905dc351185678c3bb86296150aaabefac70e97662a9a514057459ebc1c
+
+C:\Users\64352>docker container run -d nginx
+4576316b2b1cadbb1a575c4554099927369d4e2b78c94206cca40c0f515b62c0
+
+C:\Users\64352>docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+4576316b2b1c   nginx     "/docker-entrypoint.…"   10 seconds ago   Up 9 seconds    80/tcp    elegant_satoshi
+c72d1905dc35   nginx     "/docker-entrypoint.…"   12 seconds ago   Up 11 seconds   80/tcp    intelligent_keldysh
+4104718271c1   nginx     "/docker-entrypoint.…"   15 seconds ago   Up 13 seconds   80/tcp    eloquent_mendeleev
+
+C:\Users\64352>docker stop 4576316b2b1c
+4576316b2b1c
+
+C:\Users\64352>docker stop c72d1905dc35
+c72d1905dc35
+
+C:\Users\64352>docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                      PORTS     NAMES
+4576316b2b1c   nginx     "/docker-entrypoint.…"   33 seconds ago   Exited (0) 16 seconds ago             elegant_satoshi
+c72d1905dc35   nginx     "/docker-entrypoint.…"   35 seconds ago   Exited (0) 16 seconds ago             intelligent_keldysh
+4104718271c1   nginx     "/docker-entrypoint.…"   38 seconds ago   Up 36 seconds               80/tcp    eloquent_mendeleev
+
+C:\Users\64352>

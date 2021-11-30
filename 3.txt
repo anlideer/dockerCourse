@@ -1,0 +1,50 @@
+C:\Users\64352>
+C:\Users\64352>docker container run -d devopsdockeruh/simple-web-service:ubuntu
+Unable to find image 'devopsdockeruh/simple-web-service:ubuntu' locally
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+5d3b2c2d21bb: Pull complete
+3fc2062ea667: Pull complete
+75adf526d75b: Pull complete
+965d4bbb586a: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:ubuntu
+01b2daed7443636a73929abfc64d311f48ddadcaa98b7ed492b1cb568d93b0ac
+
+C:\Users\64352>docker ps
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED         STATUS         PORTS     NAMES
+01b2daed7443   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   5 seconds ago   Up 4 seconds             wonderful_wing
+
+C:\Users\64352>docker exec -it 01b2daed7443 bin
+OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "bin": executable file not found in $PATH: unknown
+
+C:\Users\64352>docker exec -it 01b2daed7443 /bin/bash
+root@01b2daed7443:/usr/src/app# tail -f ./text.log
+2021-11-30 12:30:07 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-11-30 12:30:09 +0000 UTC
+2021-11-30 12:30:11 +0000 UTC
+2021-11-30 12:30:13 +0000 UTC
+2021-11-30 12:30:15 +0000 UTC
+2021-11-30 12:30:17 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-11-30 12:30:19 +0000 UTC
+2021-11-30 12:30:21 +0000 UTC
+2021-11-30 12:30:23 +0000 UTC
+2021-11-30 12:30:25 +0000 UTC
+2021-11-30 12:30:27 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-11-30 12:30:29 +0000 UTC
+2021-11-30 12:30:31 +0000 UTC
+2021-11-30 12:30:33 +0000 UTC
+2021-11-30 12:30:35 +0000 UTC
+2021-11-30 12:30:37 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-11-30 12:30:39 +0000 UTC
+2021-11-30 12:30:41 +0000 UTC
+2021-11-30 12:30:43 +0000 UTC
+^C
+root@01b2daed7443:/usr/src/app# exit
+exit
+
+C:\Users\64352>
