@@ -1,0 +1,25 @@
+PS C:\Users\64352\Downloads\material-applications-main\example-frontend> docker build . -t frontend-project
+[+] Building 1.0s (12/12) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 275B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 87B                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/node:16                                                         0.7s
+ => [internal] load build context                                                                                  0.0s
+ => => transferring context: 708.45kB                                                                              0.0s
+ => [1/7] FROM docker.io/library/node:16@sha256:2033f4cc18f9d8b5d0baa7f276aaeffd202e1a2c6fe9af408af05a34fe68cbfb   0.0s
+ => CACHED [2/7] WORKDIR /usr/src/app                                                                              0.0s
+ => CACHED [3/7] COPY . .                                                                                          0.0s
+ => CACHED [4/7] RUN node -v && npm -v                                                                             0.0s
+ => CACHED [5/7] RUN npm install                                                                                   0.0s
+ => CACHED [6/7] RUN REACT_APP_BACKEND_URL=http://localhost:8080 npm run build                                     0.0s
+ => CACHED [7/7] RUN npm install -g serve                                                                          0.0s
+ => exporting to image                                                                                             0.1s
+ => => exporting layers                                                                                            0.0s
+ => => writing image sha256:1b23d25616c1e290b44e810eb2f026a697dd6ae899cb5a36a1f4e8f01441799f                       0.0s
+ => => naming to docker.io/library/frontend-project                                                                0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+PS C:\Users\64352\Downloads\material-applications-main\example-frontend> docker run -p 5000:5000 frontend-project
+INFO: Accepting connections at http://localhost:5000
+

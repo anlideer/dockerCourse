@@ -1,0 +1,22 @@
+PS C:\Users\64352\Desktop\tmp> echo > text.log
+
+cmdlet Write-Output at command pipeline position 1
+Supply values for the following parameters:
+InputObject[0]:
+PS C:\Users\64352\Desktop\tmp> docker run -v "$(pwd)/text.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service
+Starting log output
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log

@@ -1,0 +1,45 @@
+PS C:\Users\64352\Downloads\material-applications-main\example-backend> docker build . -t backend-project
+[+] Building 71.5s (10/10) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.1s
+ => => transferring dockerfile: 153B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.1s
+ => => transferring context: 111B                                                                                  0.0s
+ => [internal] load metadata for docker.io/library/golang:1.16                                                     2.6s
+ => [1/5] FROM docker.io/library/golang:1.16@sha256:74e2f21075e16cb560fd3c94c18538daaee0063afb42e5667ff4a880889f  46.4s
+ => => resolve docker.io/library/golang:1.16@sha256:74e2f21075e16cb560fd3c94c18538daaee0063afb42e5667ff4a880889fb  0.0s
+ => => sha256:74e2f21075e16cb560fd3c94c18538daaee0063afb42e5667ff4a880889fb88b 2.35kB / 2.35kB                     0.0s
+ => => sha256:b49fa28516994f5568ceab42ecfae66ee8254231163188ade60b42137a60a77e 1.80kB / 1.80kB                     0.0s
+ => => sha256:6c29725f0797cb2f3a5a2be9ba9c78b1d2b744af848918063abb3d852e4ac3b7 7.08kB / 7.08kB                     0.0s
+ => => sha256:3bb8f5b0a40ceab0f6e5c21b8a4bc5598c15aef36b70613963cc1e6efd3c9e9b 129.08MB / 129.08MB                36.8s
+ => => sha256:9297634c9537024497f76a2e1b374d8a315baa21d45bf36dc7980dc42ab93b0b 85.81MB / 85.81MB                  34.7s
+ => => sha256:6212a479d8ae142998be61eaab31ccc59bf5b722c72e90bbb455457b42da1a16 157B / 157B                         0.5s
+ => => extracting sha256:9297634c9537024497f76a2e1b374d8a315baa21d45bf36dc7980dc42ab93b0b                          3.1s
+ => => extracting sha256:3bb8f5b0a40ceab0f6e5c21b8a4bc5598c15aef36b70613963cc1e6efd3c9e9b                          7.8s
+ => => extracting sha256:6212a479d8ae142998be61eaab31ccc59bf5b722c72e90bbb455457b42da1a16                          0.0s
+ => [internal] load build context                                                                                  0.1s
+ => => transferring context: 28.90kB                                                                               0.0s
+ => [2/5] WORKDIR /usr/src/app                                                                                     2.5s
+ => [3/5] COPY . .                                                                                                 0.3s
+ => [4/5] RUN go build                                                                                            12.9s
+ => [5/5] RUN go test ./...                                                                                        5.2s
+ => exporting to image                                                                                             1.3s
+ => => exporting layers                                                                                            1.2s
+ => => writing image sha256:de9a7b731c0125bf6c8d72252b770c44dc1ef3e70bad025cb6935d31a9dd99cc                       0.0s
+ => => naming to docker.io/library/backend-project                                                                 0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+PS C:\Users\64352\Downloads\material-applications-main\example-backend> docker run -p 8080:8080 backend-project
+[Ex 2.4+] REDIS_HOST env was not passed so redis connection is not initialized
+[Ex 2.6+] POSTGRES_HOST env was not passed so postgres connection is not initialized
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:   export GIN_MODE=release
+ - using code:  gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> server/router.pingpong (4 handlers)
+[GIN-debug] GET    /messages                 --> server/controller.GetMessages (4 handlers)
+[GIN-debug] POST   /messages                 --> server/controller.CreateMessage (4 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2022/02/08 - 16:11:19 | 200 |        63.3µs |      172.17.0.1 | GET      "/ping"
+
